@@ -1,0 +1,69 @@
+body{
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	font-family: "等线";
+	width:1800px;
+	height: 1080px;
+}
+#title1{
+	position: absolute;
+	width: 1920px;
+	top: 5px;
+	left: 0px;
+	text-align: center;
+    font-family: "";
+}
+#settimebutton{
+	position: absolute;
+	text-align: center;
+	left: 0px;
+	top: 175px;
+	width: 1920px;
+}
+#resetbutton{
+	position: absolute;
+	text-align: center;
+	left: 0px;
+	top: 866px;
+	width: 1920px;
+}
+video{
+	position: fixed;
+	left: 0;
+	top: 0;
+	min-width: 100%;
+	min-height: 100%;
+	height: auto;
+	z-index: -9999;
+}
+#txt{
+	position: absolute;
+	width: 1920px;
+	top: 333px;
+	line-height: 0px;
+	left: 0px;/**/
+    color: #fff;
+    font-size: 300px;
+}
+#time{
+    -web-kit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+	border: none;
+	font-size: 300px;
+	height: 400px;
+	color: white;
+	text-align: center;
+	line-height: 400px;
+	-webkit-text-stroke: 4px #888;
+}
+.tip{
+	border: 1px white solid;
+	position: absolute;
+	right: 30px;
+	top: 30px;
+	height: 120px;
+	width: 120px;
+	color: white;
+}

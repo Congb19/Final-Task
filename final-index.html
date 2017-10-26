@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset=UTF-8 http-equiv="Content-Type" content="text/html;">
+<link rel="stylesheet" type="text/css" href="index.css">
+<link rel="stylesheet" type="text/css" href="button.css">
+<style>
+
+</style>
+
+</head>
+<body>
+  <!--<video autoplay loop style="width: 100%;">
+    <source src="video.mp4" type="">  
+  </video> -->
+  <div> <img src="back.jpg"></div>
+  <div id="title1"><p style="text-align: center; font-size: 77px; color: #eee; -webkit-text-stroke: 1px #888;">Congb19's Countdown</p></div>
+  <div class="demo">
+	<div id="settimebutton">
+	  <input class="button white" type="button" value="设置时间！" onClick=sets()> &nbsp;&nbsp;
+	  <input class="button white" type="button" value="开始计时！" onClick=start()> 
+	</div>
+	<div id="txt"> <b><div id="time">0</div></b> </div>
+	<div id="resetbutton">
+	  <input class="button white" type="button" value="重置时间！" onClick=reset()> 
+	</div>
+  </div>
+  <!--<div class="tip">已知bug：<br></div>-->
+<script type="text/javascript"> 
+  	var stop; //用于重置
+  	var c=0;//主时间
+  	var region;//重置用
+    var judge = 0;
+  function sets() //设置时间 
+  {
+    c=prompt("请输入时间（秒）",c);
+    clearInterval(stop);
+    region=c;
+    judge=0; //避免了第二次设置后再点开始计时无效的bug
+    document.getElementById('time').innerHTML=c;
+  }
+  function clock() //主时钟！ //修复了多点立即下一秒的bug
+  {
+  	if(c<1)return;
+  	c=c-1;
+  	document.getElementById('time').innerHTML=c;
+    //console.log(c);   //测试用
+  }
+  function start() //调用clock 
+  {  
+  		if(judge == 1) return;
+  		judge = 1;
+      stop=setInterval(clock,1000)
+  }
+  function reset() //重置
+  {
+    setTimeout("document.getElementById('time').innerHTML=region",0);
+    clearInterval(stop);
+    c=region;
+    judge=0;  //避免了重置后再点开始计时无效的bug
+  }
+</script>
+
+</body>
+</html>
