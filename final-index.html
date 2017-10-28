@@ -29,13 +29,13 @@
 <script type="text/javascript"> 
   	var stop; //用于重置
   	var c=0;//主时间
-  	var region;//重置用
+  	//var region;
     var judge = 0;
   function sets() //设置时间 
   {
     c=prompt("请输入时间（秒）",c);
     clearInterval(stop);
-    region=c;
+    //region=c;
     judge=0; //避免了第二次设置后再点开始计时无效的bug
     document.getElementById('time').innerHTML=c;
   }
@@ -54,9 +54,9 @@
   }
   function reset() //重置
   {
-    setTimeout("document.getElementById('time').innerHTML=region",0);
+    setTimeout("document.getElementById('time').innerHTML=0",0);
     clearInterval(stop);
-    c=region;
+    c=0;
     judge=0;  //避免了重置后再点开始计时无效的bug
   }
 </script>
